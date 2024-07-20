@@ -4,3 +4,27 @@ function getComputerChoice (){
 }
 
 console.log(getComputerChoice())
+
+
+// Takes player's input
+
+function getHumanChoice () {
+    let playerChoice = prompt("Choose rock, paper or scissors:");
+    if (playerChoice.toLowerCase() === "rock") {
+        playerChoice = 0;
+        return playerChoice;
+      } else if (playerChoice.toLowerCase() === "paper") {
+        playerChoice = 1;
+        return playerChoice;
+      } else if (playerChoice.toLowerCase() === "scissors") {
+        playerChoice = 2;
+        return playerChoice;
+      } else {
+        alert("Invalid option")
+        // recursive call 
+        getHumanChoice()
+      }
+
+}
+
+console.log(getHumanChoice())
