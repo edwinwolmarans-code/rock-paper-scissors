@@ -1,6 +1,5 @@
 let humanScore = 0;
-let computerScore = 0;
-
+let computerScore = 0; 
 
 // Randomly returns 0, 1 or 2
 function getComputerChoice (){
@@ -31,20 +30,32 @@ function getHumanChoice () {
 // play round
 function playRound(humanChoice, computerChoice) {
     if (humanChoice < computerChoice){
-        console.log('Computer wins');
+        console.log('Computer wins!');
         computerScore ++;
     } else if (humanChoice > computerChoice) {
         console.log('Player wins!')
         humanScore ++;
     } else {
-        console.log('Draw')
+        console.log('Draw!')
     }
 
 }
 
-const humanSelection = getHumanChoice();
-console.log(humanSelection)
-const computerSelection = getComputerChoice();
-console.log(computerSelection)
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+ 
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        console.log(humanSelection)
+        const computerSelection = getComputerChoice();
+        console.log(computerSelection)
+
+        playRound(humanSelection, computerSelection);
+        
+        console.log(`Player's current score is: ${humanScore}`)
+        console.log(`Computer's current score is: ${computerScore}`)
+      }
+
+}
+
+playGame()
