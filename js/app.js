@@ -7,9 +7,6 @@ function getComputerChoice (){
     return Math.floor(Math.random() * 3);
 }
 
-console.log(getComputerChoice())
-
-
 // Takes player's input
 
 function getHumanChoice () {
@@ -31,4 +28,23 @@ function getHumanChoice () {
 
 }
 
-console.log(getHumanChoice())
+// play round
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice < computerChoice){
+        console.log('Computer wins');
+        computerScore ++;
+    } else if (humanChoice > computerChoice) {
+        console.log('Player wins!')
+        humanScore ++;
+    } else {
+        console.log('Draw')
+    }
+
+}
+
+const humanSelection = getHumanChoice();
+console.log(humanSelection)
+const computerSelection = getComputerChoice();
+console.log(computerSelection)
+
+playRound(humanSelection, computerSelection);
